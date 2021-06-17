@@ -143,6 +143,7 @@ module Decidim
         before do
           create(:csv_datum, email: "other_email@example.org", organization: organization)
         end
+
         it "is not valid" do
           expect(subject).not_to be_valid
         end

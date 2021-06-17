@@ -8,9 +8,9 @@ module Decidim
       describe CensusForm do
         subject do
           described_class.from_params(
-              user: user
+            user: user
           ).with_context(
-              context
+            context
           )
         end
 
@@ -21,7 +21,7 @@ module Decidim
 
         let(:context) do
           {
-              current_organization: organization
+            current_organization: organization
           }
         end
 
