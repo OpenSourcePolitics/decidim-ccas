@@ -1,42 +1,8 @@
 ---
 fr:
-  activemodel:
-    attributes:
-      participatory_process:
-        private_space: Espace privé
-      osp_authorization_handler:
-        document_number: Numéro unique
-        postal_code: Code postal
-        birthday: Date de naissance
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              not_authorized: ne fait pas partie de la liste des adresses autorisées
-  decidim:
-    authorization_handlers:
-      osp_authorization_handler:
-        explanation: Vérifier votre identité en saisissant un numéro unique
-        fields:
-          document_number: Numéro unique
-          postal_code: Code postal
-          birthday: Date de naissance
-        name: Formulaire de vérification d'identité
-      osp_authorization_workflow:
-        name: Procédure d'autorisation
-    amendments:
-      emendation:
-        announcement:
-          evaluating: |-
-            Cet amendement pour le %{amendable_type} %{proposal_link}
-            est en cours d’évaluation.
-    verifications:
-      authorizations:
-        first_login:
-          actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    failure:
+      invited: Invited
   layouts:
     decidim:
       footer:

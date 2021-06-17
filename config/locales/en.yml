@@ -1,5 +1,8 @@
 ---
 en:
+  devise:
+    failure:
+      invited: Invited
   layouts:
     decidim:
       footer:
