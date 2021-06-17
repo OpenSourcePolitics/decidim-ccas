@@ -1,5 +1,12 @@
 ---
 fr:
+  activemodel:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_authorized: ne fait pas partie de la liste des adresses autorisées
   devise:
     failure:
       invited: Invited
