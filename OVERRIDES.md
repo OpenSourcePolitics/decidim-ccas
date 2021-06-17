@@ -1,0 +1,1 @@
+- app/forms/decidim/registration_form.rb
