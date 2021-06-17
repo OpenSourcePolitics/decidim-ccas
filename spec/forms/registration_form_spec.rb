@@ -130,17 +130,9 @@ module Decidim
       let(:authorizations) { ["csv_census"] }
 
       context "when user email in census" do
-        let(:attributes) do
-          {
-              name: name,
-              nickname: nickname,
-              email: email,
-              password: password,
-              password_confirmation: password_confirmation,
-              tos_agreement: tos_agreement
-          }
+        before do
+          create(:csv_datum, email: email, organization: organization)
         end
-        let!(:csv_datum) { create(:csv_datum, email: email, organization: organization) }
 
         it "is valid" do
           expect(subject).to be_valid
@@ -148,8 +140,9 @@ module Decidim
       end
 
       context "when user email not in census" do
-        let(:csv_datum) { create(:csv_datum, email: "other_email@example.org", organization: organization) }
-
+        before do
+          create(:csv_datum, email: "other_email@example.org", organization: organization)
+        end
         it "is not valid" do
           expect(subject).not_to be_valid
         end
