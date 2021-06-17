@@ -1,5 +1,12 @@
 ---
 en:
+  activemodel:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_authorized: Email is not authorized
   devise:
     failure:
       invited: Invited
