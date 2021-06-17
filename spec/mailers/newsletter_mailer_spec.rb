@@ -9,14 +9,14 @@ module Decidim
       create(:newsletter,
              organization: organization,
              subject: {
-                 en: "Email for %{name}",
-                 ca: "Email per %{name}",
-                 es: "Email para %{name}"
+               en: "Email for %{name}",
+               ca: "Email per %{name}",
+               es: "Email para %{name}"
              },
              body: {
-                 en: "Content for %{name}",
-                 ca: "Contingut per %{name}",
-                 es: "Contenido para %{name}"
+               en: "Content for %{name}",
+               ca: "Contingut per %{name}",
+               es: "Contenido para %{name}"
              })
     end
 
@@ -52,14 +52,14 @@ module Decidim
             create(:newsletter,
                    organization: organization,
                    subject: {
-                       en: "Email for %{name}",
-                       ca: "",
-                       es: "Email para %{name}"
+                     en: "Email for %{name}",
+                     ca: "",
+                     es: "Email para %{name}"
                    },
                    body: {
-                       en: "Content for %{name}",
-                       ca: "",
-                       es: "Contenido para %{name}"
+                     en: "Content for %{name}",
+                     ca: "",
+                     es: "Contenido para %{name}"
                    })
           end
 

@@ -9,13 +9,13 @@ module Decidim
       let(:organization) { create(:organization, smtp_settings: smtp_settings) }
       let(:smtp_settings) do
         {
-            "address" => "mail.gotham.gov",
-            "port" => "25",
-            "user_name" => "f.laguardia",
-            "encrypted_password" => Decidim::AttributeEncryptor.encrypt("password"),
-            "from_email" => "",
-            "from_label" => "",
-            "from" => from
+          "address" => "mail.gotham.gov",
+          "port" => "25",
+          "user_name" => "f.laguardia",
+          "encrypted_password" => Decidim::AttributeEncryptor.encrypt("password"),
+          "from_email" => "",
+          "from_label" => "",
+          "from" => from
         }
       end
       let(:mail) { described_class.send_email(user, organization) }
