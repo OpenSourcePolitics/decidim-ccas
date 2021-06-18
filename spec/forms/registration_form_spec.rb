@@ -124,5 +124,30 @@ module Decidim
 
       it { is_expected.to be_invalid }
     end
+
+    context "when csv census is enabled" do
+      let(:organization) { create(:organization, available_authorizations: authorizations) }
+      let(:authorizations) { ["csv_census"] }
+
+      context "when user email in census" do
+        before do
+          create(:csv_datum, email: email, organization: organization)
+        end
+
+        it "is valid" do
+          expect(subject).to be_valid
+        end
+      end
+
+      context "when user email not in census" do
+        before do
+          create(:csv_datum, email: "other_email@example.org", organization: organization)
+        end
+
+        it "is not valid" do
+          expect(subject).not_to be_valid
+        end
+      end
+    end
   end
 end

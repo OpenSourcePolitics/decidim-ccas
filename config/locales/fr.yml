@@ -1,5 +1,21 @@
 ---
 fr:
+  activemodel:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_authorized: ne fait pas partie de la liste des adresses autorisées
+  decidim:
+    admin:
+      participatory_space_private_users:
+        create:
+          error: Error
+          success: Success
+  devise:
+    failure:
+      invited: Invited
   layouts:
     decidim:
       footer:
