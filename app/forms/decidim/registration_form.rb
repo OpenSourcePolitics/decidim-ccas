@@ -39,11 +39,13 @@ module Decidim
       errors.add :email, :taken if User.no_active_invitation.find_by(email: email, organization: current_organization).present?
     end
 
+    # rubocop:disable Style/SoleNestedConditional
     def email_in_census
       if current_organization.available_authorizations.include?("csv_census")
         errors.add :email, :not_authorized unless Decidim::Verifications::CsvDatum.exists?(organization: current_organization, email: email)
       end
     end
+    # rubocop:enable Style/SoleNestedConditional
 
     def nickname_unique_in_organization
       errors.add :nickname, :taken if User.no_active_invitation.find_by(nickname: nickname, organization: current_organization).present?
