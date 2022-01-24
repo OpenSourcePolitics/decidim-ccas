@@ -7,10 +7,12 @@ Rails/ActionFilter:
   Include:
     - app/controllers/**/*.rb
 
+Rails/ContentTag:
+  Enabled: false
+
 Rails/CreateTableWithTimestamps:
   Enabled: false
-Rails/BulkChangeTable:
-  Enabled: false
+
 Rails/EnumUniqueness:
   Include:
     - app/models/**/*.rb
@@ -53,15 +55,21 @@ Rails/Output:
   Include:
     - app/**/*.rb
     - config/**/*.rb
+    - db/**/*.rb
     - lib/**/*.rb
   Exclude:
-    - db/seeds.rb
     - lib/decidim/core.rb
     - lib/decidim/component_manifest.rb
     - lib/decidim/participatory_space_manifest.rb
-    - db/**/*.rb
+    - db/seeds.rb
 
 Rails/OutputSafety:
+  Enabled: false
+
+Rails/Pluck:
+  Enabled: false
+
+Rails/RakeEnvironment:
   Enabled: false
 
 Rails/ReadWriteAttribute:
@@ -82,10 +90,6 @@ Rails/Validation:
   Include:
     - app/models/**/*.rb
 
-Style/MixinUsage:
+Rails/BulkChangeTable:
   Exclude:
-    - bin/*
-
-Metrics/LineLength:
-  Exclude:
-    - db/**.rb
+    - db/**/*

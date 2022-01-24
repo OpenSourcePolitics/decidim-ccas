@@ -6,18 +6,20 @@ Decidim.configure do |config|
   config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
+  config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
-  if Rails.application.secrets.geocoder[:here_api_key].present?
-    config.geocoder = {
-      static_map_url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview",
-      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
+  config.maps = {
+    provider: :here,
+    api_key: Rails.application.secrets.maps[:api_key],
+    static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" },
+    autocomplete: {
+      address_format: [%w(houseNumber street), "city", "country"]
     }
-  end
+  }
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     # puts "Decidim::Initiatives are loaded"
@@ -91,7 +93,7 @@ Decidim.configure do |config|
     }
   end
 
-  config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/" if ENV["HEROKU_APP_NAME"].present?
+  config.base_uploads_path = "#{ENV["HEROKU_APP_NAME"]}/" if ENV["HEROKU_APP_NAME"].present?
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
