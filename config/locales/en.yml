@@ -1,17 +1,24 @@
 ---
 en:
-  activemodel:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              not_authorized: Email is not authorized
   decidim:
     admin:
       participatory_space_private_users:
         create:
           error: Error
+          success: Success
+    meetings:
+      directory:
+        meetings:
+          index:
+            all: All
+      meeting:
+        not_allowed: Not allowed
+      meetings:
+        create:
+          invalid: Invalid
+          success: Success
+        update:
+          invalid: Invalid
           success: Success
   devise:
     failure:
